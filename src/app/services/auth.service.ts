@@ -1,6 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { environment } from '../../environments/environment.development';
+import { environment } from '../../environments/environment';
 import { map, catchError, Observable } from 'rxjs';
 import { JsendResponse } from '../models/jsend-response';
 import { User } from '../models/user';
