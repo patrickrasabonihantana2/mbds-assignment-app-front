@@ -3,11 +3,15 @@
     <div><h1>Assignment APP</h1></div>
     <div id="profil">
       <div id="userinfo">
-        <div>Michel Buffa</div>
-        <div>email de Mr Buffa</div>
+        <div>{{user.firstname}} {{user.lastname}}</div>
+        <div>{{user.email}}</div>
       </div>
       <div id="logout">
-        <div>logout</div>
+        <div>
+          <button (click)="onLogout()">
+            <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="logout"></mat-icon>
+          </button>
+        </div>
       </div>
     </div>
     <div id="links">

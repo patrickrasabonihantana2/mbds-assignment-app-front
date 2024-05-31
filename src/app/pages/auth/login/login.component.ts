@@ -14,9 +14,6 @@ import { HttpClientModule } from '@angular/common/http';
 @Component({
   selector: 'app-login',
   standalone: true,
-  providers: [
-    AuthService
-  ],
   imports: [
     RouterLink,
     HttpClientModule,
@@ -57,8 +54,7 @@ export class LoginComponent implements OnInit {
       };
       this.authService.login(userrLogin).subscribe(
         (user: User) => {
-          console.log('user', user);
-          // this.router.navigate(['/']);
+          this.router.navigate(['/back']);
         }
       );
     }
