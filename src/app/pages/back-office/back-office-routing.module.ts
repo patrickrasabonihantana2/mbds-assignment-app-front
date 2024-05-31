@@ -7,7 +7,18 @@ const routes: Routes = [
   {
     path: '',
     component: BackOfficeComponent,
-    canActivate: [authGuard]
+    canActivate: [authGuard],
+    children: [
+      {
+        path: 'assignment',
+        loadChildren: () => import('./assignment/assignment.module').then(m => m.AssignmentModule)
+      },
+      {
+        path: '',
+        redirectTo: 'assignment',
+        pathMatch: 'full'
+      }
+    ]
   }
 ];
 
