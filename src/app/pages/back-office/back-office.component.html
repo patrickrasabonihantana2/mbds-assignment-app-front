@@ -1,0 +1,20 @@
+<mat-drawer-container id="container">
+  <mat-drawer id="sidebar" mode="side" opened>
+    <div><h1>Assignment APP</h1></div>
+    <div id="profil">
+      <div id="userinfo">
+        <div>Michel Buffa</div>
+        <div>email de Mr Buffa</div>
+      </div>
+      <div id="logout">
+        <div>logout</div>
+      </div>
+    </div>
+    <div id="links">
+      @for(link of links; track link.label) {
+        <div class="link"><a routerLink="{{link.path}}">{{link.label}}</a></div>
+      }
+    </div>
+  </mat-drawer>
+  <mat-drawer-content class="content"><router-outlet></router-outlet></mat-drawer-content>
+</mat-drawer-container>

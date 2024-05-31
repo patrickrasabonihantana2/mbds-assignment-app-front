@@ -1,0 +1,38 @@
+#container {
+  width: auto;
+  height: 100%;
+  border: 1px solid #555;
+  /* The background property is added to clearly distinguish the borders between drawer and main
+     content */
+  background: #eee;
+}
+#sidebar {
+  width: 300px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  background-color: darkblue;
+  color: white;
+}
+#content {
+  padding: 10px;
+}
+
+#profil {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+#links {
+  margin-top: 30px;
+}
+.link {
+  width: 100%;
+}
+
+#logout {
+  display: flex;
+  align-items: center;
+}
