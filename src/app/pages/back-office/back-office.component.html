@@ -15,9 +15,11 @@
       </div>
     </div>
     <div id="links">
-      @for(link of links; track link.label) {
-        <div class="link"><a routerLink="{{link.path}}">{{link.label}}</a></div>
-      }
+      <ul style="width: 100%; list-style-type: none; padding: 0; margin: 0;">
+        @for(link of links; track link.label) {
+          <li class="link"><a routerLink="{{link.path}}">{{link.label}}</a></li>
+        }
+      </ul>
     </div>
   </mat-drawer>
   <mat-drawer-content class="content"><router-outlet></router-outlet></mat-drawer-content>

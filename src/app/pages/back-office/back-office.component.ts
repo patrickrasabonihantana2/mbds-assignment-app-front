@@ -2,6 +2,7 @@ import { AuthService } from './../../services/auth.service';
 import { Component, OnInit } from '@angular/core';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatIconModule} from '@angular/material/icon';
+import {MatButtonModule} from '@angular/material/button';
 import { Router, RouterLink, RouterOutlet } from '@angular/router';
 import { User } from '../../models/user';
 
@@ -12,7 +13,8 @@ import { User } from '../../models/user';
     RouterOutlet,
     RouterLink,
     MatSidenavModule,
-    MatIconModule
+    MatIconModule,
+    MatButtonModule
   ],
   templateUrl: './back-office.component.html',
   styleUrl: './back-office.component.scss'

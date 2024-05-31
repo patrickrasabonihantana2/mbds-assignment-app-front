@@ -28,8 +28,25 @@
 #links {
   margin-top: 30px;
 }
+
 .link {
   width: 100%;
+  text-align: start;
+  padding: 15px;
+  list-style-position:inside;
+  border-top: 1px solid white;
+
+  &:hover{
+    background-color: white;
+
+    a {
+      color: darkblue;
+    }
+  }
+  a {
+    text-decoration: none;
+    color: white;
+  }
 }
 
 #logout {
