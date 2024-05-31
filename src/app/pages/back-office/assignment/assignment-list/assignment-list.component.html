@@ -1,1 +1,32 @@
-<p>assignment-list works!</p>
+<div>
+  <div><h1>Assignment List</h1></div>
+  <div>
+    <div id="paginate">
+      <mat-paginator [length]="assignmentsPaginate.totalDocs"
+                [pageSize]="assignmentsPaginate.limit"
+                [pageIndex]="assignmentsPaginate.page"
+                (page)="onPageChange($event)"
+                aria-label="Select page">
+      </mat-paginator>
+    </div>
+    <div id="list">
+      @for(assignment of assignmentsPaginate.docs; track assignment.name) {
+        <mat-card class="list-item">
+          <mat-card-header>
+            <mat-card-title>{{assignment.name}}</mat-card-title>
+            <mat-card-subtitle>{{assignment.subject.name}} - {{assignment.subject.teacher.firstname}} {{assignment.subject.teacher.lastname}}</mat-card-subtitle>
+          </mat-card-header>
+          <mat-card-content class="list-item-content">
+            <b>Author : </b>{{assignment.author.firstname}} {{assignment.author.lastname}}
+          </mat-card-content>
+          <mat-card-actions>
+            <button mat-button color="primary" (click)="viewDetail(assignment._id)">View Detail</button>
+            @if(userRole == 'ADMIN') {
+              <button mat-button  color="warn">Delete</button>
+            }
+          </mat-card-actions>
+        </mat-card>
+      }
+    </div>
+  </div>
+</div>

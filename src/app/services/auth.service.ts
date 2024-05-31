@@ -35,7 +35,6 @@ export class AuthService {
   }
 
   login(userLogin: UserLogin): Observable<User> {
-    console.log('userLogin', userLogin);
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
       'username': userLogin.username,
