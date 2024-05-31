@@ -53,4 +53,24 @@ export class AssignmentService {
           })
         );
   }
+
+  delete(id: string) {
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': "Bearer " + localStorage.getItem('token')
+    });
+    const options = {
+      headers: headers
+    };
+    return this.http.delete(`${environment.apiUrl}/assignment/${id}`, options)
+        .pipe(
+          map((response: JsendResponse) => {
+            let data = response.data;
+            return data;
+          }),
+          catchError((error: any) => {
+            throw error;
+          })
+        );
+  }
 }

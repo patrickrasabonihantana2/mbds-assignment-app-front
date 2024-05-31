@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {MatButtonModule} from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
 import { AssignmentService } from '../../../../services/assignment.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { DatePipe } from '@angular/common';
 
 @Component({
@@ -22,7 +22,8 @@ export class AssignmentDetailComponent implements OnInit {
 
   constructor(
     private assignmentService: AssignmentService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -31,6 +32,16 @@ export class AssignmentDetailComponent implements OnInit {
       (data: any) => {
         this.assignment = data;
         console.log('assignment', this.assignment);
+      }
+    );
+  }
+
+  onDelete() {
+    let id = this.assignment._id as string;
+    console.log('id', id);
+    this.assignmentService.delete(id).subscribe(
+      (data: any) => {
+        this.router.navigate(['/back/assignment']);
       }
     );
   }

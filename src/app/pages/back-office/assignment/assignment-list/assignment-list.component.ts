@@ -51,4 +51,14 @@ export class AssignmentListComponent implements OnInit {
     console.log('id', id);
     this.router.navigate(['/back/assignment', id]);
   }
+
+  onDelete(_id: any) {
+    let id = _id as string;
+    console.log('id', id);
+    this.assignmentService.delete(id).subscribe(
+      (data: any) => {
+        this.router.navigate(['/back/assignment']);
+      }
+    );
+  }
 }
