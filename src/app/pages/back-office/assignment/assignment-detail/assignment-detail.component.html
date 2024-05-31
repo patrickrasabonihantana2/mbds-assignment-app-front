@@ -1,1 +1,43 @@
-<p>assignment-detail works!</p>
+<mat-card class="item">
+  <mat-card-header>
+    <mat-card-title><h1>{{assignment.name}}</h1></mat-card-title>
+  </mat-card-header>
+  <mat-card-content class="list-item-content">
+    <div id="basic">
+      <h2>Basic Information</h2>
+      <div id="basic-content" class="el-info-content">
+        <p class="el-info-content-item"><b>Name :</b> {{assignment.name}}</p>
+        <p class="el-info-content-item"><b>Subject :</b> {{assignment.subject.name}}</p>
+      </div>
+    </div>
+    <div id="teacher">
+      <h2>Teacher Information</h2>
+      <div id="teacher-content" class="el-info-content">
+        <p class="el-info-content-item"><b>Name :</b> {{assignment.subject.teacher.firstname}} {{assignment.subject.teacher.lastname}}</p>
+        <p class="el-info-content-item"><b>Email :</b> {{assignment.subject.teacher.email}}</p>
+      </div>
+    </div>
+    <div id="author">
+      <h2>Author Information</h2>
+      <div id="author-content" class="el-info-content">
+        <p class="el-info-content-item"><b>Name :</b> {{assignment.author.firstname}} {{assignment.author.lastname}}</p>
+        <p class="el-info-content-item"><b>Email :</b> {{assignment.author.email}}</p>
+      </div>
+    </div>
+    @if(assignment.score) {
+      <div id="score">
+        <h2>Score Information</h2>
+        <div id="author-content" class="el-info-content">
+          <p class="el-info-content-item"><b>Submisssion data :</b> {{assignment.submission_date | date: 'MMM d, y'}}</p>
+          <p class="el-info-content-item"><b>Score :</b> {{assignment.score}}</p>
+          <p class="el-info-content-item-full"><b>Comment :</b> {{assignment.comments}}</p>
+        </div>
+      </div>
+    }
+  </mat-card-content>
+  <mat-card-actions>
+    @if(userRole == 'ADMIN') {
+      <button mat-button  color="warn">Delete</button>
+    }
+  </mat-card-actions>
+</mat-card>

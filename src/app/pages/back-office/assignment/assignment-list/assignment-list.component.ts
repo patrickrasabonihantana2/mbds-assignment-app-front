@@ -49,6 +49,6 @@ export class AssignmentListComponent implements OnInit {
   viewDetail(_id: any) {
     let id = _id as string;
     console.log('id', id);
-    // this.router.navigate(['']);
+    this.router.navigate(['/back/assignment', id]);
   }
 }

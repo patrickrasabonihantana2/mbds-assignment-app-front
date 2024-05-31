@@ -1,0 +1,12 @@
+.el-info-content {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+
+  .el-info-content-item {
+    width: 50%;
+  }
+  .el-info-content-item-full {
+    width: 50%;
+  }
+}
