@@ -40,7 +40,7 @@ export class BackOfficeComponent implements OnInit {
     },
     {
       label: 'Assignments',
-      path: ''
+      path: '/back/assignment'
     }
   ];
 
